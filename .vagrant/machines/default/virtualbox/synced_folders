@@ -1,0 +1,1 @@
+{"virtualbox":{"/var/www/html":{"nfs":true,"guestpath":"/var/www/html","hostpath":"D:/arquivos/Documentos/vagrant/vagrant_ubuntu_18.04","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"D:/arquivos/Documentos/vagrant/vagrant_ubuntu_18.04","disabled":false,"__vagrantfile":true}}}
