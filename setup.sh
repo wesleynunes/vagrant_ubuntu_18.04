@@ -5,7 +5,7 @@ echo "--- Instalando pacotes para desenvolvimento [PHP]"
 # Criar variaves para senha mysql, nome do projeto, git
 echo "--- Definir senha mysql, nome do projeto, nome email do git---"
 PASSWORD='123'
-PROJECTFOLDER='projeto'
+PROJECTFOLDER='project'
 GITNAME="Wes"
 GITEMAIL="wesleysilva.ti@gmail.com"
 
@@ -22,7 +22,7 @@ echo "--- instalar apache2 ---"
 sudo apt-get -y install apache2
 
 echo "--- instalar php, libapache2-mod-php ---"
-sudo apt-get -y install php libapache2-mod-php 
+sudo apt-get -y install php libapache2-mod-php php-pear php-fpm php-dev php-zip php-curl php-xmlrpc php-gd php-mbstring php-xml
 
 echo "--- instalar mysql e fornercer senha para o instalador, instalando php-mysql-- "
 sudo debconf-set-selections <<< "mysql-server mysql-server/root_password password $PASSWORD"
@@ -64,6 +64,15 @@ echo "--- instalando e configurando git ---"
 sudo apt-get -y install git 
 git config --global user.name ${GITNAME} 
 git config --global user.email ${GITEMAIL}
+
+echo "--- instalando nodejs ---"
+sudo apt -y install nodejs
+sudo apt -y install npm
+
+echo "-- instalar composer"
+curl -sS https://getcomposer.org/installer -o composer-setup.php
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+composer
 
 echo "--- reiniciar apache ---"
 sudo service apache2 restart
