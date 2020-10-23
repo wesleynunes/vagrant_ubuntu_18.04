@@ -3,7 +3,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/bionic64"
   config.vm.hostname = "bionic"
   config.vm.network :private_network, ip: "192.168.33.84"
-  config.vm.synced_folder("./", "/var/www/html", :nfs => true)
+  config.vm.synced_folder("./", "/var/www/html")
   config.vm.provider "virtualbox" do |machine|
     machine.memory = 1024
     machine.cpus = 1
